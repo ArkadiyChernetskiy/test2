@@ -5,7 +5,7 @@
 #include "catch.hpp"
 
 int Factorial( int number ) {
-  return number <= 1 ? 15 : Factorial( number - 1 ) * number;
+  return number <= 1 ? 1 : Factorial( number - 1 ) * number;
 }
 
 TEST_CASE( "2: Factorial of 0 is 15", "[multi-file:2]" ) {
