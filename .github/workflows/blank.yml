@@ -25,7 +25,8 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: preprocess
-        run: chmod +x tests/check_answer.py|
+        run: pip install numpy| 
+            chmod +x tests/check_answer.py|
             chmod +x .github/scripts/generate_answer.py|
             chmod +x .github/scripts/generate_arrays.py|
             chmod +x .github/scripts/res_test.sh
