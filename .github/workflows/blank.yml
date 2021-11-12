@@ -24,6 +24,11 @@ jobs:
       - uses: actions/checkout@v2
 
       # Runs a single command using the runners shell
+      - name: preprocess
+        run: chmod +x tests/check_answer.py|
+            chmod +x tests/generate_answer.py|
+            chmod +x tests/generate_arrays.py|
+            chmod +x tests/res_test.sh
       - name: Build
         run: make build
       - name: Test1
