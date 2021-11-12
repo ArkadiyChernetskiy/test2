@@ -25,4 +25,10 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: make test
+        run: make build
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: test1
+        run: make test1
