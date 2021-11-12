@@ -4,6 +4,8 @@ build:
 	g++ -std=c++17 hello.cpp
 
 test1:
-	./a.out
+	./a.out > out.txt
+	diff out.txt answer.txt
 clean:
 	rm a.out
+	rm out.txt
