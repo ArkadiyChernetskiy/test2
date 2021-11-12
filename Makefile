@@ -5,6 +5,7 @@ build:
 
 test1:
 	./a.out > out.txt
+	echo "Hello world" > answer.txt 
 	diff out.txt answer.txt
 clean:
 	rm a.out
