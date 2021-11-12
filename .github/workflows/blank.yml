@@ -25,10 +25,11 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: preprocess
-        run: pip install numpy| 
-            chmod +x .github/scripts/check_answer.py|
-            chmod +x .github/scripts/generate_answer.py|
-            chmod +x .github/scripts/generate_arrays.py|
+        run: |
+            pip install numpy
+            chmod +x .github/scripts/check_answer.py
+            chmod +x .github/scripts/generate_answer.py
+            chmod +x .github/scripts/generate_arrays.py
             chmod +x .github/scripts/res_test.sh
       - name: Build
         run: make build
