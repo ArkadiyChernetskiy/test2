@@ -4,7 +4,7 @@ build:
 	g++ -std=c++17 hello.cpp
 
 test1:
-	./tests/res_test.sh
+	./.github/scripts/res_test.sh
 clean:
 	rm a.out
 	rm out.txt
