@@ -11,5 +11,5 @@ with open ("out.txt") as file1:
         else:
             print ("error on test:")
             with open ("test_without_sizes.txt") as f:
-                print(f)
+                print(f.readlines())
             sys.exit(1)
