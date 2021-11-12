@@ -1,6 +1,6 @@
 #! /bin/bash
 
-./tests/generate_arrays.py > test.txt
+python ./tests/generate_arrays.py > test.txt
 A=$(head -n 1 test.txt)
 echo $A
 tail -n +2 test.txt > test_without_sizes.txt
