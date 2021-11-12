@@ -1,7 +1,7 @@
 all: a.out
 
 a.out:
-	g++ -std=c++11 hello.cpp
+	g++ -std=c++17 hello.cpp
 
 test: a.out
 	./a.out
