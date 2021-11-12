@@ -9,4 +9,7 @@ with open ("out.txt") as file1:
         if (ans1 == ans2):
             sys.exit(0)
         else:
+            print ("error on test:")
+            with open ("test_without_sizes.txt") as f:
+                print(f)
             sys.exit(1)
