@@ -1,9 +1,9 @@
-all: a.out
+all: build
 
-a.out:
+build:
 	g++ -std=c++17 hello.cpp
 
-test: a.out
+test: build
 	./a.out
 
 clean:
