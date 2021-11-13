@@ -31,7 +31,11 @@ jobs:
             chmod +x .github/scripts/generate_answer.py
             chmod +x .github/scripts/generate_arrays.py
             chmod +x .github/scripts/res_test.sh
+            chmod +x .github/scripts/mem_test.sh
+            chmod +x .github/scripts/value_test.sh
       - name: Build
         run: make build
-      - name: Test1
-        run: make test1
+      - name: Memory_Test
+        run: make memory_test
+      - name: Value_Test
+        run: make value_test
