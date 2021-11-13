@@ -27,6 +27,7 @@ jobs:
       - name: preprocess
         run: |
             pip install numpy
+            sudo apt-get -y install valgrind
             chmod +x .github/scripts/check_answer.py
             chmod +x .github/scripts/generate_answer.py
             chmod +x .github/scripts/generate_arrays.py
