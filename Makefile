@@ -7,7 +7,12 @@ test1:
 	./.github/scripts/res_test.sh
 
 memory_test:
-	./.github/scripts/mem_test.sh
+	n=1; \
+    while [ $${n} -lt 11 ] ; do \
+        printf "test number $$n\r" ;\
+		./.github/scripts/mem_test.sh;\
+        n=`expr $$n + 1`; \
+    done; \
 
 value_test:
 	./.github/scripts/value_test.sh
