@@ -17,8 +17,8 @@ memory_test:
 value_test:
 	n=1; \
     while [ $${n} -lt 101 ] ; do \
-        printf "test number $$n\r" ;\
-		./.github/scripts/mem_test.sh;\
+        printf "test number $$n" ;\
+		./.github/scripts/value_test.sh;\
         n=`expr $$n + 1`; \
     done; \
 
