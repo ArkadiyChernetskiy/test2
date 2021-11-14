@@ -34,6 +34,7 @@ jobs:
             chmod +x .github/scripts/res_test.sh
             chmod +x .github/scripts/mem_test.sh
             chmod +x .github/scripts/value_test.sh
+            chmod +x .github/scripts/memory_tests.sh
       - name: Build
         run: make build
       - name: Memory_Test
