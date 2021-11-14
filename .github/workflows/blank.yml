@@ -28,13 +28,7 @@ jobs:
         run: |
             pip install numpy
             sudo apt-get -y install valgrind
-            chmod +x .github/scripts/check_answer.py
-            chmod +x .github/scripts/generate_answer.py
-            chmod +x .github/scripts/generate_arrays.py
-            chmod +x .github/scripts/res_test.sh
-            chmod +x .github/scripts/mem_test.sh
-            chmod +x .github/scripts/value_test.sh
-            chmod +x .github/scripts/memory_tests.sh
+            chmod -R +x .github/scripts
       - name: Build
         run: make build
       - name: Memory_Test
