@@ -26,12 +26,11 @@ jobs:
       # Runs a single command using the runners shell
       - name: preprocess
         run: |
-            pip install numpy
             sudo apt-get -y install valgrind
             chmod -R +x .github/scripts
       - name: Build
-        run: make build
+        run: make work_test
       - name: Memory_Test
         run: make memory_test
-      - name: Value_Test
-        run: make value_test
+      - name: Allocator_tests
+        run: make allocs_test

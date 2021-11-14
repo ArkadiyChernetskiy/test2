@@ -56,6 +56,7 @@ public:
 void String::changeCapacity(size_t newSize){
     capacity = newSize;
     char* newData = new char[newSize];
+    //char* nn = new char[2];
     memcpy (newData, data, size);
     delete[] (data);
     data = newData;
