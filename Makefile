@@ -15,7 +15,12 @@ memory_test:
     done; \
 
 value_test:
-	./.github/scripts/value_test.sh
+	n=1; \
+    while [ $${n} -lt 101 ] ; do \
+        printf "test number $$n\r" ;\
+		./.github/scripts/mem_test.sh;\
+        n=`expr $$n + 1`; \
+    done; \
 
 clean:
 	rm a.out
