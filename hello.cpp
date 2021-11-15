@@ -55,6 +55,7 @@ int main (int argc, char** argv)//массив строк= массив масс
         }
     }
     std::cout<< answer;
+    std::cout.flush();
     //осталось правильно прописать все delete
     delete[] ind;
     for (int i=0; i<k; i++){
