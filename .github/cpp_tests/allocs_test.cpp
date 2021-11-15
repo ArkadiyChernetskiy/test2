@@ -82,6 +82,6 @@ int main () {
   number_of_new = 0;
 
   s4.substr (2,5);
-  assert (number_of_new == 0 && "s4.rfind (s2)");
+  assert (number_of_new <= 1 && "s4.substr (2,5)");
   number_of_new = 0;
 }
