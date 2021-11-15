@@ -10,7 +10,7 @@ done
 
 valgrind --log-file=./valgrind_log.txt ./a.out $A < test_without_sizes.txt > out.txt
 Total_memory=$(cat valgrind_log.txt | grep 'total heap usage' | awk -F ' ' '{print $9}' | sed 's/,//g')
-let Total_memory=$Total_memory-76800
+let Total_memory=$Total_memory-80896
 Total_allocs=$(cat valgrind_log.txt | grep 'total heap usage' | awk -F ' ' '{print $5}' | sed 's/,//g')
 Total_free=$(cat valgrind_log.txt | grep 'total heap usage' | awk -F ' ' '{print $7}' | sed 's/,//g')
 

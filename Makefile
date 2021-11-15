@@ -1,7 +1,7 @@
 all: build
 
 build:
-	g++ -std=c++17 hello.cpp
+	g++ -std=c++17 -g hello.cpp
 
 test1:
 	./.github/scripts/res_test.sh

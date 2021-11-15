@@ -1,5 +1,4 @@
 #include <iostream>
-#include <cstdlib>
 
 int main (int argc, char** argv)//массив строк= массив массивов символов
 {
@@ -63,7 +62,6 @@ int main (int argc, char** argv)//массив строк= массив масс
     }
     delete[] a;
     delete[] len;
-    delete[] argv;
 
     return 0;
 }
