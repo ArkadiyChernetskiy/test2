@@ -34,4 +34,4 @@ jobs:
       - name: Value_Test
         run: make value_test
       - name: Memory_Test
-      run: make memory_test
+        run: make memory_test
