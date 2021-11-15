@@ -12,7 +12,7 @@ memory_test:
 
 work_test:
 	g++ -std=c++17 -g ./.github/cpp_tests/work_test.cpp
-	./a.out;
+	./a.out > out.txt;
 
 allocs_test:
 	g++ -std=c++17 -g ./.github/cpp_tests/allocs_test.cpp
