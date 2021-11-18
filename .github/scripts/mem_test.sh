@@ -8,7 +8,13 @@ for i in $A; do
   let elements_count+=$i
 done
 
-valgrind --log-file=./valgrind_log.txt ./a.out $A < test_without_sizes.txt > out.txt
+valgrind --error-exitcode=3 --exit-on-first-error=yes --log-file=./valgrind_log.txt ./a.out $A < test_without_sizes.txt > out.txt
+if (($? != 0)) 
+then
+	exit 1
+fi;
+
+
 Total_memory=$(cat valgrind_log.txt | grep 'total heap usage' | awk -F ' ' '{print $9}' | sed 's/,//g')
 let Total_memory=$Total_memory-80896
 Total_allocs=$(cat valgrind_log.txt | grep 'total heap usage' | awk -F ' ' '{print $5}' | sed 's/,//g')
