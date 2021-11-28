@@ -1,33 +1,64 @@
-#include "../../String.cpp"
+#include "../../BigInteger.h"
+#include <cassert>
 
 int main()
 {
-    String s;
-    s += "abc";
-    s += s;
-    String s1 ("def");
-    String s2 (5, 'a');
-    String s3 (s2);
+    BigInteger a;
+    BigInteger b(1);
+    if (b == false) assert ("Incorrect operator bool");
 
-    std::cout << s3 << s2 << s1;
+    a = 0;
+    a += 1;
+    a = a + 2;
+    a = 3 - a;
+    a = 10;
+    a += b;
+    a * b;
+    a / b;
+    -a;
 
+    BigInteger c(a*b);
+    a % b;
+    b %= a;
 
-    s1 = s1 + s2;
-    String s5 = s2 + s3;
-    s2 += s[1];
-    s3.back();
-    s3.front();
-    s3 = s3 + s1 + s3;
-    s.find ("b");
-    s.rfind ("b");
-    s.clear();
+    a == b;
+    a != b;
+    a < c;
+    a > c;
+    a <= c;
+    a >= c;
+    
+    std::cout << c.toString() << std::endl;
+    std::stringstream ss("123456789123456789123456789123456789123456789123456789123456789123456789123456789123456789123456789123456789123456789");
+    ss >> b;
+    std::cout << b << std::endl;
+    b += 1;
+    b++;
+    ++b;
+    b--;
+    --b;
 
-    s.empty();
-    s.length();
-    s3.length();
-    for (int i = 0; i < 1'000 ; i++) s.push_back('a');
-    for (int i = 0; i < 999 ; i++) s.pop_back();
+    Rational r1;
+    Rational r2(5);
+    Rational r3 (b);
+    Rational r4 (b,1);
+    r1 = 0;
+    r1 += r2;
+    r1 -= r2;
+    r1 / r2;
+    r1 * r2;
+    -r1;
 
-    String s4 ("qwertyuiopasdfghjkl");
-    s4.substr (2,5);
+    r1 == r2;
+    r1 != r2;
+    r1 < r2;
+    r1 <= r2;
+    r1 > r2;
+    r1 >= r2;
+    r3.toString();
+    r2.asDecimal(10);
+    (double)r3;
+    std::cout << r3;
+
+    r2 = 0;
 }

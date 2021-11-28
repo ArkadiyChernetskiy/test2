@@ -34,3 +34,5 @@ jobs:
         run: make memory_test
       - name: Allocator_tests
         run: make allocs_test
+      - name: Code_Style_test
+        run: make code_style_test
