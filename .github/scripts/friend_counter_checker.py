@@ -18,7 +18,7 @@ with open ("BigInteger.h") as file:
             R_begin_flag = True
             BI_begin_flag = False
             if (friend_counter > 4):
-                exit (1)
+                exit ("Too many friends in BigInteger. Should be less than 5")
             #print (str(friend_counter) + " ... " + line)
             friend_counter = 0
         
@@ -26,13 +26,4 @@ with open ("BigInteger.h") as file:
             friend_counter+=1
     #print (friend_counter)
     if (friend_counter > 4):
-        exit(2)
-        
-
-
-
-
-
-
-
-        
+        exit("Too many friends in Rational. Should be less than 5")
