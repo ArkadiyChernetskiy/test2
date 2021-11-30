@@ -1,3 +1,4 @@
+#include <sstream>
 #include <new>
 #include <iostream>
 #include <cassert>
@@ -74,7 +75,7 @@ int main () {
   number_of_new = 0;
 
   b1 = 2;
-  assert (number_of_new == 0 && "b1 = 2");
+  assert (number_of_new <= 2 && "b1 = 2");
   number_of_new = 0;
 
   BigInteger b3 (b2);
@@ -83,7 +84,6 @@ int main () {
 
   b2 = b1;
   assert (number_of_new <= 1 && "b2 = b1");
-  number_of_new = 0;
   b2 = 123456789;
   b2*= 100000000;
   b2*= 100000000;
@@ -109,7 +109,6 @@ int main () {
   new_size = 0;
   number_of_new = 0;
   
-  new_size = 0;
   b1 = b2;
   number_of_new = 0;
   prev_new_size = new_size;
@@ -122,11 +121,9 @@ int main () {
 
   b2--;
   assert (number_of_new <= 1+add_number && new_size < prev_new_size + 25  && "b2--");
+  b1 = 10;
   number_of_new = 0;
   new_size = 0;
-
-  b3 = 0;
-  number_of_new = 0;
 
   b2+=b1;
   assert (number_of_new <= add_number-1 && "b2+=b1");
@@ -136,17 +133,21 @@ int main () {
   assert (number_of_new <= add_number-1 && "b2-=b1");
   number_of_new = 0;
 
+  b3 = 0;
+  number_of_new = 0;
+
   std::stringstream ss("123456789123456789123456789123456789123456789123456789123456789123456789123456789123456789123456789123456789123456789");
   ss >> b3;
   //assert (number_of_new <= 2 && "in >> b3");
   number_of_new = 0;
 
   b1+=b3;
-  //assert (number_of_new <= add_number-1 && "b3 = dofiga; b1+=b3");
+  assert (number_of_new <= add_number && "b3 = dofiga; b1+=b3");
+  b2 = 10;
   number_of_new = 0;
 
   b2-=b1;
-  //assert (number_of_new <= add_number-1 && "b1 = dofiga; b2-=b1");
+  assert (number_of_new <= add_number && "b1 = dofiga; b2-=b1");
   number_of_new = 0;
 
   -b1;
@@ -186,7 +187,7 @@ int main () {
   number_of_new = 0;
 
   b1.toString();
-  //assert (number_of_new <= 1 && "b1.toString()");
+  assert (number_of_new <= 1 && "b1.toString()");
   std::stringstream s2;
   number_of_new = 0;
 

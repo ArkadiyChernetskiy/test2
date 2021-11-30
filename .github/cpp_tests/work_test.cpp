@@ -1,3 +1,4 @@
+#include <sstream>
 #include "../../BigInteger.h"
 #include <cassert>
 
@@ -58,7 +59,6 @@ int main()
     r3.toString();
     r2.asDecimal(10);
     (double)r3;
-    std::cout << r3;
 
     r2 = 0;
 }

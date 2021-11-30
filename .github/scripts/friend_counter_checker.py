@@ -25,5 +25,5 @@ with open ("BigInteger.h") as file:
         if ((BI_begin_flag or R_begin_flag) and line.find("friend") != -1):
             friend_counter+=1
     #print (friend_counter)
-    if (friend_counter > 4):
-        exit("Too many friends in Rational. Should be less than 5")
+    if (friend_counter > 2):
+        exit("Too many friends in Rational. Should be less than 3")
