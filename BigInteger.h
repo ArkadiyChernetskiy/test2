@@ -134,6 +134,7 @@ public:
 
     std::string toString() const{
         std::string ans;
+        ans.reserve (data.size() + 4);
         for (size_t digit = 0; digit < data.size(); digit++)
             ans += digitToReversedStr(data[digit], (digit < data.size() - 1));
         if (is_negative && ans != "0")

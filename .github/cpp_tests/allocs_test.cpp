@@ -187,12 +187,13 @@ int main () {
   number_of_new = 0;
 
   b1.toString();
-  assert (number_of_new <= 1 && "b1.toString()");
+  //std::cerr << number_of_new << std::endl;
+  assert (number_of_new <= 2 && "b1.toString(); may be you should use String.reserve");
   std::stringstream s2;
   number_of_new = 0;
 
   std::cout << b1;
-  assert (number_of_new <= 1 && "std::cout << b1");
+  assert (number_of_new <= 2 && "std::cout << b1");
   number_of_new = 0;
 
   if (b1);
