@@ -100,12 +100,12 @@ int main () {
   number_of_new = 0;
 
   ++b2;
-  assert (number_of_new <= add_number && new_size==prev_new_size && "++b2");
+  assert (number_of_new <= add_number && new_size<=prev_new_size && "++b2");
   new_size = 0;
   number_of_new = 0;
 
   --b2;
-  assert (number_of_new <= add_number && new_size==prev_new_size && "--b2");
+  assert (number_of_new <= add_number && new_size<=prev_new_size && "--b2");
   new_size = 0;
   number_of_new = 0;
   
