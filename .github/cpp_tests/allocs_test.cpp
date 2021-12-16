@@ -44,7 +44,7 @@ bool operator==(const BigInteger& first, int second);
 bool operator<(const BigInteger& first, int second);
 bool operator>(const BigInteger& first, int second);
 
-#include "../../BigInteger.h"
+#include "../../Matrix.h"
 
 bool operator==(const BigInteger& first, int second)
 {
