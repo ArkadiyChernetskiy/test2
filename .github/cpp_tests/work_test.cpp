@@ -1,5 +1,5 @@
 #include <sstream>
-#include "../../Matrix.h"
+#include "../../matrix.h"
 #include <cassert>
 #include <utility>
 
@@ -16,18 +16,18 @@ void print_Matrix (Matrix<A,B,F>& m)
 
 int main()
 {
-    Residue<10000> not_simple;
-    Residue<6571> simple;
+    Residue<10000> not_simple(0);
+    Residue<6571> simple(0);
 
     not_simple = not_simple + Residue<10000> (1);
     assert (not_simple == Residue<10000> (1) && "not_simple = not_simple(0) + Residue<10000> (1)");
     not_simple = not_simple - Residue<10000> (2);
     assert (not_simple == Residue<10000> (9999) && "not_simple = not_simple(1) - Residue<10000> (2)");
-    ++not_simple;
-    // not_simple += Residue<10000>(1);
+    //++not_simple;
+     not_simple += Residue<10000>(1);
     assert (not_simple == Residue<10000> (0) && "++not_simple");
-    --not_simple;
-    // not_simple -= Residue<10000>(1);
+    //--not_simple;
+     not_simple -= Residue<10000>(1);
     not_simple *= Residue<10000>(5);
     Residue<10000> not_simple2 (5*9999);
     assert (not_simple == not_simple2 && "not_simple(9999) *= Residue<10000>(5); Residue<10000> not_simple2 (5*9999);");
