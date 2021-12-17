@@ -49,6 +49,7 @@ int main()
     assert (ra.isCongruentTo (pb));
     assert (pb.isSimilarTo (ra));
     shapes.push_back (&ra);
+    Polygon* aa = dynamic_cast <Polygon*> (&ra);
 
     Square sa(Point(0,0), Point(1,1));
     assert (sa == pa);
@@ -57,7 +58,7 @@ int main()
     assert (pb.isSimilarTo (sa));
     shapes.push_back (&sa);
 
-    Ellipse ea (Point (1,1), Point(1,1), 1);
+    Ellipse ea (Point (1,1), Point(1,1), 2);
     assert (ea.focuses() == make_pair (Point(1,1), Point(1,1)));
     ea.directrices();
     assert (ea.eccentricity() < 1e-4);
