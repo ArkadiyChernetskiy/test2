@@ -412,7 +412,7 @@ bool Ellipse::isSimilarTo(const Shape& another) const {
 }
 bool Ellipse::containsPoint(Point point) const {
     double sum_focal = points_distance(FF.first, point) + points_distance(FF.second, point);
-    return sum_focal < a * 2 || equal(sum_focal, 2 * a);
+    return (sum_focal < a * 2) || equal(sum_focal, 2 * a);
 }
 void Ellipse::rotate(Point center, double angle) {
     angle *= M_PI / 180 ;
