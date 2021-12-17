@@ -1,84 +1,111 @@
 #include <sstream>
-#include "../../matrix.h"
+#include "../../geometry.h"
 #include <cassert>
 #include <utility>
+#include <vector>
 
-template <int A, int B, typename F>
-void print_Matrix (Matrix<A,B,F>& m)
+using std::vector;
+using std::cout;
+using std::endl;
+
+void print_vector (const vector<Point>& in)
 {
-    for (int i = 0 ; i < A ; i++)
+    for (auto i:in)
     {
-        for (int j = 0 ; j < B ; j++)
-            std::cout << m[i][j].toString() << " ";
-        std::cout << std::endl;
+        cout << "(" <<i.x << ", " << i.y << ")" << "; ";
     }
+    cout << endl;
 }
 
 int main()
 {
-    Residue<10000> not_simple;
-    Residue<6571> simple;
+    Point a (1,1);
+    Point b (2,2);
+    assert (a!=b && "a(1,1) b(2,2)");
+    Point c = a;
+    assert (a==c && "c = a");
 
-    not_simple = not_simple + Residue<10000> (1);
-    assert (not_simple == Residue<10000> (1) && "not_simple = not_simple(0) + Residue<10000> (1)");
-    not_simple = not_simple - Residue<10000> (2);
-    assert (not_simple == Residue<10000> (9999) && "not_simple = not_simple(1) - Residue<10000> (2)");
-    ++not_simple;
-    // not_simple += Residue<10000>(1);
-    assert (not_simple == Residue<10000> (0) && "++not_simple");
-    --not_simple;
-    // not_simple -= Residue<10000>(1);
-    not_simple *= Residue<10000>(5);
-    Residue<10000> not_simple2 (5*9999);
-    assert (not_simple == not_simple2 && "not_simple(9999) *= Residue<10000>(5); Residue<10000> not_simple2 (5*9999);");
-
-    simple = simple + Residue<6571> (1);
-    assert (simple == Residue<6571> (1) && "simple = simple(0) + Residue<6571> (1)");
-    simple = simple - Residue<6571> (2);
-    assert (simple == Residue<6571> (6570) && "simple = simple(1) - Residue<6571> (2)");
-    //++simple;
-    simple += Residue<6571>(1);
-    assert (simple == Residue<6571> (0) && "++simple");
-    //--simple;
-    simple -= Residue<6571>(1);
-    simple *= Residue<6571>(5);
-    Residue<6571> simple2 (5*6570);
-    assert (simple == simple2 && "simple(6570) *= Residue<6571>(5); Residue<6571> simple2 (5*6570);");
-    simple2 /= Residue<6571> (5);
-    assert (simple2 == Residue<6571>(6570) && "simple2(6566) /= Residue<6571> (5)");
-
-    //--------------------------------------------------------------------------------------------------------------------------------
+    Line eq(1, 0);
+    Line fromPoints (a,b);
+    assert (eq == fromPoints && "eq(1,0) fromPoints ((1,1), (2,2))");
+    assert (eq != Line (Point(1,1), Point(1,2)) && "eq(1,0)");
     
-    vector<vector<int>> a = {{1,2,3,4,5}, 
-                             {6,7,8,9,4}, 
-                             {3,4,2,1,5}, 
-                             {3,4,2,2,1}};
-    vector<vector<int>> b = {{534,53 ,123,65 ,32}, 
-                             {123,867,43 ,123,65}, 
-                             {534,867,312,423,75}, 
-                             {423,65 ,878,43 ,123}};
-    Matrix<4,5> m1(a);
+    vector <Shape*> shapes;
 
-    auto m2 = m1 * Rational(5);
-    Matrix<4,5> m3 (b);
-    auto m4 = m3 + m1;
-    auto m5 = m2.transposed();
+    vector <Point> points1 = {Point(0,1), Point(1,1), Point(1,0), Point(0,0)};
+    Polygon pa (points1);
+    //cout << pa.containsPoint (Point(0.5, 0.5)) << endl;
+    Polygon pb ({Point(1,1), Point(1,0), Point(0,0), Point(0,1)});
+    //print_vector (pb.getVertices());
+    assert (pa==pb);
+    pb = Polygon ({Point(-1,1), Point(-1,0), Point(0,0), Point(0,1)});
+    pb.reflex (Line(0,-1));
+    //print_vector (pb.getVertices());
+    assert (pa.isCongruentTo (pb));
+    assert (pa.isSimilarTo(pb));
+    shapes.push_back (&pa);
+    shapes.push_back (&pb);
 
-    auto m6 = m5*m4;
+    Rectangle ra(Point(0,0), Point (1,1), 1);
+    assert (ra == pa);
+    assert (pa == ra);
+    assert (ra.isCongruentTo (pb));
+    assert (pb.isSimilarTo (ra));
+    shapes.push_back (&ra);
 
-    m6[4][4] = 1;
-    assert (m6.det().toString() == "4111713081600562500" && 
-"20990 40595 20070 11340 5315\\
-29125 49940 26925 14690 6865\\
-22815 45185 15870 11005 5355\\
-23450 45475 15185 9890 5485\\
-31510 40975 16420 15190 4925");
-    auto m7 = m6.inverted();
-    m7.rank();
-    m7.trace();
-    assert ((m6*m7 == Matrix<5,5>()) && "m6*m6^-1");
+    Square sa(Point(0,0), Point(1,1));
+    assert (sa == pa);
+    assert (pa == sa);
+    assert (sa.isCongruentTo (pb));
+    assert (pb.isSimilarTo (sa));
+    shapes.push_back (&sa);
 
-    m7[0][1] = 2;
+    Ellipse ea (Point (1,1), Point(1,1), 1);
+    assert (ea.focuses() == make_pair (Point(1,1), Point(1,1)));
+    ea.directrices();
+    assert (ea.eccentricity() < 1e-4);
+    shapes.push_back (&ea);
 
-    assert ((SquareMatrix<5>() == Matrix<5,5>()));
+    Circle ca (Point(1,1), 1);
+    assert (ca.center() == Point(1,1));
+    assert (ca.focuses() == make_pair (Point(1,1), Point(1,1)));
+    assert (ca == ea);
+    assert (ea == ca);
+    assert (ca.isCongruentTo(ea));
+    assert (ea.isSimilarTo(ca));
+
+    Triangle ta (Point (0,0), Point (1,1), Point (1,0));
+    Triangle tb (Point (0,0), Point (1,1), Point (0,1));
+
+    ta.circumscribedCircle();
+    ta.inscribedCircle();
+    ta.centroid();
+    ta.orthocenter();
+    ta.EulerLine();
+    ta.ninePointsCircle();
+    assert (ta.area() + tb.area() - sa.area() < 1e-4);
+    assert (ta != tb);
+    assert (ta.isCongruentTo(tb));
+    assert (ta.isSimilarTo(tb));
+
+    Triangle tc (Point (0,0), Point (1,0), Point(0.5,1));
+    shapes.push_back (&tc);
+
+    int j=0;
+    for (auto i: shapes)
+    {
+        //j++;
+        //if (j < 5) continue;
+        //cout << j << endl;
+        assert (i->area() > 0);
+        assert (i->containsPoint (Point (0.5,0.5)));
+        double perimeter = i->perimeter();
+        double area = i->area();
+        i->reflex (Point (1,1));
+        i->reflex (Line(0,0));
+        i->rotate (Point(0.5,0.5), 90);
+        //cout << "p " << perimeter << " " << i->perimeter() << endl; 
+        assert (perimeter - i->perimeter() < 1e-4);
+        assert (area - i->area() < 1e-4);
+    }
 }
