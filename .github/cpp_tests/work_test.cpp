@@ -8,6 +8,7 @@ using std::vector;
 using std::cout;
 using std::endl;
 
+
 void print_vector (const vector<Point>& in)
 {
     for (auto i:in)
@@ -34,17 +35,13 @@ int main()
 
     vector <Point> points1 = {Point(0,1), Point(1,1), Point(1,0), Point(0,0)};
     Polygon pa (points1);
-    //cout << pa.containsPoint (Point(0.5, 0.5)) << endl;
     Polygon pb ({Point(1,1), Point(1,0), Point(0,0), Point(0,1)});
-    //print_vector (pb.getVertices());
     assert (pa==pb);
     pb = Polygon ({Point(-1,1), Point(-1,0), Point(0,0), Point(0,1)});
     pb.reflex (Line(0,-1));
-    //print_vector (pb.getVertices());
     assert (pa.isCongruentTo (pb));
     assert (pa.isSimilarTo(pb));
     shapes.push_back (&pa);
-    shapes.push_back (&pb);
 
     Rectangle ra(Point(0,0), Point (1,1), 1);
     assert (ra == pa);
@@ -91,20 +88,15 @@ int main()
     Triangle tc (Point (0,0), Point (1,0), Point(0.5,1));
     shapes.push_back (&tc);
 
-    int j=0;
     for (auto i: shapes)
     {
-        //j++;
-        //if (j < 5) continue;
-        //cout << j << endl;
         assert (i->area() > 0);
         assert (i->containsPoint (Point (0.5,0.5)));
         double perimeter = i->perimeter();
         double area = i->area();
-        i->reflex (Point (1,1));
+        i->reflex (Point (10,10));
         i->reflex (Line(0,0));
-        i->rotate (Point(0.5,0.5), 90);
-        //cout << "p " << perimeter << " " << i->perimeter() << endl; 
+        i->rotate (Point(10,10), 90);
         assert (perimeter - i->perimeter() < 1e-4);
         assert (area - i->area() < 1e-4);
     }
