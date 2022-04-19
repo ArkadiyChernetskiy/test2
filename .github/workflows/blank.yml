@@ -28,7 +28,7 @@ jobs:
         run: |
             sudo apt-get -y install valgrind
             chmod -R +x .github/scripts
-      - name: Build
+      - name: Work_test
         run: make work_test
       #- name: Memory_Test
       #  run: make memory_test

@@ -92,7 +92,7 @@ int main()
     }
     catch(...)
     {
-        assert (Int::del_counter == 9 && "After exception wrong number of elements destroyed Deque<Int> (11, i)");
+        assert (Int::del_counter == 8 && "After exception wrong number of elements destroyed Deque<Int> (11, i)");
     }
 
     Deque<Int> d (5, i);
