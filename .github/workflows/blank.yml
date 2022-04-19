@@ -30,5 +30,7 @@ jobs:
             chmod -R +x .github/scripts
       - name: Build
         run: make work_test
-      - name: Memory_Test
-        run: make memory_test
+      #- name: Memory_Test
+      #  run: make memory_test
+      - name: Exception_test
+        run: make exception_test

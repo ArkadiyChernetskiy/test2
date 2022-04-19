@@ -1,104 +1,72 @@
-#include <sstream>
-#include "../../geometry.h"
+#include "../../deque.h"
 #include <cassert>
-#include <utility>
 #include <vector>
+#include <iostream>
 
 using std::vector;
 using std::cout;
 using std::endl;
 
-
-void print_vector (const vector<Point>& in)
+void print_vector (vector<int> v)
 {
-    for (auto i:in)
-    {
-        cout << "(" <<i.x << ", " << i.y << ")" << "; ";
-    }
+    for (auto i: v)
+        cout << i << " ";
     cout << endl;
 }
 
+
 int main()
 {
-    Point a (1,1);
-    Point b (2,2);
-    assert (a!=b && "a(1,1) b(2,2)");
-    Point c = a;
-    assert (a==c && "c = a");
+    Deque<int> dd;
+    Deque<vector<int>> base(10);
+    Deque<vector<int>> base2(10, vector<int>(5));
 
-    Line eq(1, 0);
-    Line fromPoints (a,b);
-    assert (eq == fromPoints && "eq(1,0) fromPoints ((1,1), (2,2))");
-    assert (eq != Line (Point(1,1), Point(1,2)) && "eq(1,0)");
-    
-    vector <Shape*> shapes;
 
-    vector <Point> points1 = {Point(0,1), Point(1,1), Point(1,0), Point(0,0)};
-    Polygon pa (points1);
-    Polygon pb ({Point(1,1), Point(1,0), Point(0,0), Point(0,1)});
-    assert (pa==pb);
-    pb = Polygon ({Point(-1,1), Point(-1,0), Point(0,0), Point(0,1)});
-    pb.reflex (Line(0,-1));
-    assert (pa.isCongruentTo (pb));
-    assert (pa.isSimilarTo(pb));
-    shapes.push_back (&pa);
+    Deque<vector<int>> dv;
+    vector<int> vv = {1,2,3,4,5};
 
-    Rectangle ra(Point(0,0), Point (1,1), 1);
-    assert (ra == pa);
-    assert (pa == ra);
-    assert (ra.isCongruentTo (pb));
-    assert (pb.isSimilarTo (ra));
-    shapes.push_back (&ra);
-    Polygon* aa = dynamic_cast <Polygon*> (&ra);
+    dv.push_back (vv);
+    dv.push_front (vv);
+    vv[2] = 10;
+    assert (dv[0][2] != 10);
 
-    Square sa(Point(0,0), Point(1,1));
-    assert (sa == pa);
-    assert (pa == sa);
-    assert (sa.isCongruentTo (pb));
-    assert (pb.isSimilarTo (sa));
-    shapes.push_back (&sa);
 
-    Ellipse ea (Point (1,1), Point(1,1), 2);
-    assert (ea.focuses() == make_pair (Point(1,1), Point(1,1)));
-    ea.directrices();
-    assert (ea.eccentricity() < 1e-4);
-    shapes.push_back (&ea);
-
-    Circle ca (Point(1,1), 1);
-    assert (ca.center() == Point(1,1));
-    assert (ca.focuses() == make_pair (Point(1,1), Point(1,1)));
-    assert (ca == ea);
-    assert (ea == ca);
-    assert (ca.isCongruentTo(ea));
-    assert (ea.isSimilarTo(ca));
-
-    Triangle ta (Point (0,0), Point (1,1), Point (1,0));
-    Triangle tb (Point (0,0), Point (1,1), Point (0,1));
-
-    ta.circumscribedCircle();
-    ta.inscribedCircle();
-    ta.centroid();
-    ta.orthocenter();
-    ta.EulerLine();
-    ta.ninePointsCircle();
-    assert (ta.area() + tb.area() - sa.area() < 1e-4);
-    assert (ta != tb);
-    assert (ta.isCongruentTo(tb));
-    assert (ta.isSimilarTo(tb));
-
-    Triangle tc (Point (0,0), Point (1,0), Point(0.5,1));
-    shapes.push_back (&tc);
-
-    for (auto i: shapes)
+    for (int i = 0 ; i < 10; i++)
     {
-        assert (i->area() > 0);
-        assert (i->containsPoint (Point (0.5,0.5)));
-        double perimeter = i->perimeter();
-        double area = i->area();
-        i->reflex (Point (10,10));
-        i->reflex (Line(0,0));
-        i->rotate (Point(10,10), 90);
-        assert (perimeter - i->perimeter() < 1e-4);
-        assert (area - i->area() < 1e-4);
+        dv.push_back(vv);
+        dv.push_front(vv);
     }
+    for (auto i: dv)
+    {
+        i.push_back(3);
+    }
+    assert (dv[5].back() != 3);
+    for (auto &i: dv)
+    {
+        i.push_back(3);
+    }
+
+
+    assert (dv[5].back() == 3);
+    assert (dv.size() == 22);
+
+    vector<int> vv2 = {9,9,9};
+    dv.push_back (vv2);
+
+    auto it = dv.end();
+    it------;------it;
+    dv.erase (it);
+    assert (dv.size() == 22);
+    assert (dv[21] == vv2);
+
+    vector<int>* v_link = &dv[21];
+    vector<int> vv3 = {1}; 
+    dv.push_back(vv3);
+    dv.push_front(vv3);
+
+    dv.pop_back();
+    //dv.pop_front();
+
+    assert (*v_link == vv2);
+    assert (*(--dv.end()) == vv2);
 }
