@@ -65,7 +65,7 @@ int main()
     dv.push_front(vv3);
 
     dv.pop_back();
-    //dv.pop_front();
+    dv.pop_front();
 
     assert (*v_link == vv2);
     assert (*(--dv.end()) == vv2);

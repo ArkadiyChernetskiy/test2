@@ -70,7 +70,7 @@ int main()
     assert (Int::counter == 0);
 
     Deque<Int> (3);
-    //assert (Int::counter == 3 || Int::counter == 4, "Too many elements constructed");
+    assert (Int::counter == 3 || Int::counter == 4, "Too many elements constructed");
 
 
     Int::Reset (5);
@@ -112,6 +112,7 @@ int main()
     {
         d.push_back (i);
         d.push_back (i);
+        
     }
     catch (...)
     {
