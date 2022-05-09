@@ -6,7 +6,7 @@ name: CI-test
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
-    branches: [ master ]
+    branches: [ Allocator_List ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -26,12 +26,13 @@ jobs:
       # Runs a single command using the runners shell
       - name: preprocess
         run: |
-            pip install numpy
             sudo apt-get -y install valgrind
             chmod -R +x .github/scripts
-      - name: Build
-        run: make build
-      - name: Value_Test
-        run: make value_test
+      - name: Work_test
+        run: make work_test
       - name: Memory_Test
         run: make memory_test
+      - name: Allocator_test
+        run: make allocator_test
+      - name: Exception_test
+        run: make exception_test
