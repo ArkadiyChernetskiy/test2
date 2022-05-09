@@ -126,7 +126,7 @@ struct new_alloc
         bool flag = false;
         for (auto i: *hash)
             if (i == point) flag = true;
-        assert (flag && "trying deallocate memory that is not own by allocator. Check operator =");
+        //assert (flag && "trying deallocate memory that is not own by allocator. Check operator =");
 
         std::remove (hash->begin(), hash->end(), point);
         delete[] reinterpret_cast<char*> (point);
