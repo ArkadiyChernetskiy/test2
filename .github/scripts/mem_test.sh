@@ -11,5 +11,9 @@ Total_free=$(cat valgrind_log.txt | grep 'total heap usage' | awk -F ' ' '{print
 if (( Total_allocs > Total_free))
 then
     echo "Мне тут valgrind на ушко шепнул, что не все new нашли себе в пару delete, а жаль("
+    echo " "
+    echo " "
+    echo " "
+    cat valgrind_log.txt
     exit 1
 fi;

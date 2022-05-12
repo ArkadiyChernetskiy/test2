@@ -6,7 +6,7 @@ name: CI-test
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
-    branches: [ List_Allocator ]
+    branches: [ Unordered_map ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -30,9 +30,3 @@ jobs:
             chmod -R +x .github/scripts
       - name: Work_test
         run: make work_test
-      - name: Memory_Test
-        run: make memory_test
-      - name: Allocator_test
-        run: make allocator_test
-      - name: Exception_test
-        run: make exception_test

@@ -5,16 +5,13 @@
 #include <algorithm>
 #include <type_traits>
 
-#include "../../List.h"
-#include "allocator_test.cpp"
-#include "list_tests.cpp"
+//#include "../../Unordered_map.h"
+#include "map_tests.cpp"
 
 
 int main()
 {
-    allocator_test();
-
-    list_test();
-    list_iterator_test();
-    list_allocator_test();
+    map_test();
+    map_iterator_test();
+    //map_allocator_test();
 }
