@@ -1,0 +1,6 @@
+make.exe --dry-run --always-make --keep-going --print-directory
+make.exe: Entering directory 'c:/Users/Killerrati/source/OOP_C++/Seminars_2021_OOP/CI_test_repository/test2'
+make.exe: Leaving directory 'c:/Users/Killerrati/source/OOP_C++/Seminars_2021_OOP/CI_test_repository/test2'
+ 
+make.exe: *** No rule to make target 'build', needed by 'all'.
+

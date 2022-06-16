@@ -1,17 +1,13 @@
-#include <deque>
-#include <memory>
-#include <cassert>
-#include <vector>
-#include <algorithm>
-#include <type_traits>
-
-//#include "../../Unordered_map.h"
-#include "map_tests.cpp"
+#include "Shared_test.cpp"
+#include "Yandex_test.cpp"
+#include "Code_style_test.cpp"
+#include "Weak_test.cpp"
 
 
 int main()
 {
-    map_test();
-    map_iterator_test();
-    //map_allocator_test();
+    yandex_test();
+    shared_test();
+    weak_test();
+    code_test();
 }
