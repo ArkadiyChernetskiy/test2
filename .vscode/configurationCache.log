@@ -1,1 +1,1 @@
-{"buildTargets":["all","clean","exception_test","memory_test","work_test"],"launchTargets":[],"customConfigurationProvider":{"workspaceBrowse":{"browsePath":[],"compilerArgs":[]},"fileIndex":[]}}
+{"buildTargets":["all","allocator_test","clean","exception_test","memory_test","work_test"],"launchTargets":[],"customConfigurationProvider":{"workspaceBrowse":{"browsePath":[],"compilerArgs":[]},"fileIndex":[]}}

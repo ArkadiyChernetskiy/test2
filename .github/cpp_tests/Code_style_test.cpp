@@ -3,7 +3,7 @@
 void code_test()
 {    
     static_assert (std::is_constructible_v <SharedPtr<First>, Second*>);
-    //static_assert (!std::is_constructible_v <SharedPtr<Second>, First*>);
+    static_assert (!std::is_constructible_v <SharedPtr<Second>, First*>);
 
     static_assert (std::is_constructible_v <SharedPtr<First>, SharedPtr<Second>>);
     //static_assert (!std::is_constructible_v <SharedPtr<Second>, SharedPtr<First>>);

@@ -8,7 +8,7 @@ make.exe: *** No rule to make target 'build', needed by 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Wed Jun 15 21:32:49 2022
+# Make data base, printed on Fri Jun 17 12:19:50 2022
 
 # Variables
 
@@ -61,7 +61,7 @@ PROGRAMW6432 = C:\Program Files
 # environment
 PROGRAMDATA = C:\ProgramData
 # environment
-VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-dff112d3-d722-496e-a7a1-5b1cd62387e3-sock
+VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-e010969b-a4e3-47a5-872f-c05cc344e886-sock
 # environment
 VSCODE_CWD = C:\Program Files\Microsoft VS Code
 # default
@@ -87,7 +87,7 @@ ELECTRON_RUN_AS_NODE = 1
 # automatic
 %F = $(notdir $%)
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_3892_RGOUFLLSYDSJCWAW
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_3768_DKHWWKKEGUMYZAWQ
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
@@ -197,7 +197,7 @@ LANG = C
 # environment
 PROCESSOR_LEVEL = 23
 # environment
-VSCODE_PID = 3892
+VSCODE_PID = 3768
 # environment
 USERDOMAIN_ROAMINGPROFILE = LAPTOP-LCV1U0BU
 # variable set hash-table stats:
@@ -209,9 +209,9 @@ USERDOMAIN_ROAMINGPROFILE = LAPTOP-LCV1U0BU
 
 # Directories
 
-# . (key c:/Users/Killerrati/source/OOP_C++/Seminars_2021_OOP/CI_test_repository/test2, mtime 1652710469): 10 files, no impossibilities.
+# . (key c:/Users/Killerrati/source/OOP_C++/Seminars_2021_OOP/CI_test_repository/test2, mtime 1655411665): 11 files, no impossibilities.
 
-# 10 files, no impossibilities in 1 directories.
+# 11 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -236,7 +236,7 @@ work_test:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-16 17:12:59
+#  Last modified 2022-06-15 22:38:52
 #  File has been updated.
 #  Successfully updated.
 
@@ -264,33 +264,41 @@ clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 16):
+#  recipe to execute (from 'Makefile', line 20):
 	rm a.out
 	rm out.txt
 	rm *.txt
+
+allocator_test:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 16):
+	g++ -std=c++17 -g ./.github/cpp_tests/alloc_test_runer.cpp
+	./.github/scripts/allocator_test.sh;
 
 exception_test:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 12):
-	g++ -std=c++17 -g ./.github/cpp_tests/exception_test.cpp
+	g++ -std=c++17 -g -Og ./.github/cpp_tests/exception_test.cpp
 	./a.out > out_except.txt;
 
 # files hash-table stats:
-# Load=9/1024=1%, Rehash=0, Collisions=0/21=0%
+# Load=10/1024=1%, Rehash=0, Collisions=0/22=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 18 / storage = 140 B / avg = 7 B
-# current buf: size = 8162 B / used = 140 B / count = 18 / avg = 7 B
+# strcache buffers: 1 (0) / strings = 20 / storage = 176 B / avg = 8 B
+# current buf: size = 8162 B / used = 176 B / count = 20 / avg = 8 B
 
-# strcache performance: lookups = 27 / hit rate = 33%
+# strcache performance: lookups = 30 / hit rate = 33%
 # hash-table stats:
-# Load=18/8192=0%, Rehash=0, Collisions=1/27=4%
-# Finished Make data base on Wed Jun 15 21:32:49 2022
+# Load=20/8192=0%, Rehash=0, Collisions=1/30=3%
+# Finished Make data base on Fri Jun 17 12:19:50 2022
 
  
