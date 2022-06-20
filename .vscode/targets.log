@@ -8,7 +8,7 @@ make.exe: *** No rule to make target 'build', needed by 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri Jun 17 12:19:50 2022
+# Make data base, printed on Mon Jun 20 11:58:42 2022
 
 # Variables
 
@@ -43,7 +43,7 @@ SHELL := sh.exe
 # environment
 WINDIR = C:\WINDOWS
 # environment
-VSCODE_NLS_CONFIG = {"locale":"ru","availableLanguages":{"*":"ru"},"_languagePackId":"6c87e287770fa80b3245e0a037b935fb.ru","_translationsConfigFile":"C:\\Users\\Killerrati\\AppData\\Roaming\\Code\\clp\\6c87e287770fa80b3245e0a037b935fb.ru\\tcf.json","_cacheRoot":"C:\\Users\\Killerrati\\AppData\\Roaming\\Code\\clp\\6c87e287770fa80b3245e0a037b935fb.ru","_resolvedLanguagePackCoreLocation":"C:\\Users\\Killerrati\\AppData\\Roaming\\Code\\clp\\6c87e287770fa80b3245e0a037b935fb.ru\\c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5","_corruptedFile":"C:\\Users\\Killerrati\\AppData\\Roaming\\Code\\clp\\6c87e287770fa80b3245e0a037b935fb.ru\\corrupted.info","_languagePackSupport":true}
+VSCODE_NLS_CONFIG = {"locale":"ru","availableLanguages":{"*":"ru"},"_languagePackId":"6c87e287770fa80b3245e0a037b935fb.ru","_translationsConfigFile":"C:\\Users\\Killerrati\\AppData\\Roaming\\Code\\clp\\6c87e287770fa80b3245e0a037b935fb.ru\\tcf.json","_cacheRoot":"C:\\Users\\Killerrati\\AppData\\Roaming\\Code\\clp\\6c87e287770fa80b3245e0a037b935fb.ru","_resolvedLanguagePackCoreLocation":"C:\\Users\\Killerrati\\AppData\\Roaming\\Code\\clp\\6c87e287770fa80b3245e0a037b935fb.ru\\30d9c6cd9483b2cc586687151bcbcd635f373630","_corruptedFile":"C:\\Users\\Killerrati\\AppData\\Roaming\\Code\\clp\\6c87e287770fa80b3245e0a037b935fb.ru\\corrupted.info","_languagePackSupport":true}
 # environment
 VBOX_MSI_INSTALL_PATH = C:\Program Files\Oracle\VirtualBox\
 # environment
@@ -61,7 +61,7 @@ PROGRAMW6432 = C:\Program Files
 # environment
 PROGRAMDATA = C:\ProgramData
 # environment
-VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-e010969b-a4e3-47a5-872f-c05cc344e886-sock
+VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-3130ddc6-9ba4-40ed-86f9-144885f1dcf3-sock
 # environment
 VSCODE_CWD = C:\Program Files\Microsoft VS Code
 # default
@@ -87,7 +87,7 @@ ELECTRON_RUN_AS_NODE = 1
 # automatic
 %F = $(notdir $%)
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_3768_DKHWWKKEGUMYZAWQ
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_18924_MHMQQPVHBGRDXFLY
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
@@ -107,7 +107,7 @@ PUBLIC = C:\Users\Public
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
-VSCODE_CODE_CACHE_PATH = C:\Users\Killerrati\AppData\Roaming\Code\CachedData\c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5
+VSCODE_CODE_CACHE_PATH = C:\Users\Killerrati\AppData\Roaming\Code\CachedData\30d9c6cd9483b2cc586687151bcbcd635f373630
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
@@ -151,7 +151,7 @@ PROCESSOR_IDENTIFIER = AMD64 Family 23 Model 96 Stepping 1, AuthenticAMD
 # environment
 OS = Windows_NT
 # environment
-VSCODE_IPC_HOOK = \\.\pipe\74d95170ee935712aebaa9f09bc3db7b-1.67.2-main-sock
+VSCODE_IPC_HOOK = \\.\pipe\74d95170ee935712aebaa9f09bc3db7b-1.68.1-main-sock
 # environment
 HOMEPATH = \Users\Killerrati
 # environment
@@ -170,6 +170,8 @@ SYSTEMROOT = C:\WINDOWS
 +F = $(notdir $+)
 # environment
 APPDATA = C:\Users\Killerrati\AppData\Roaming
+# environment
+__COMPAT_LAYER = DetectorsAppHealth
 # environment
 TEMP = C:\Users\KILLER~1\AppData\Local\Temp
 # environment
@@ -197,11 +199,11 @@ LANG = C
 # environment
 PROCESSOR_LEVEL = 23
 # environment
-VSCODE_PID = 3768
+VSCODE_PID = 18924
 # environment
 USERDOMAIN_ROAMINGPROFILE = LAPTOP-LCV1U0BU
 # variable set hash-table stats:
-# Load=94/1024=9%, Rehash=0, Collisions=16/115=14%
+# Load=95/1024=9%, Rehash=0, Collisions=16/116=14%
 
 # Pattern-specific Variable Values
 
@@ -209,7 +211,7 @@ USERDOMAIN_ROAMINGPROFILE = LAPTOP-LCV1U0BU
 
 # Directories
 
-# . (key c:/Users/Killerrati/source/OOP_C++/Seminars_2021_OOP/CI_test_repository/test2, mtime 1655411665): 11 files, no impossibilities.
+# . (key c:/Users/Killerrati/source/OOP_C++/Seminars_2021_OOP/CI_test_repository/test2, mtime 1655457909): 11 files, no impossibilities.
 
 # 11 files, no impossibilities in 1 directories.
 
@@ -299,6 +301,6 @@ exception_test:
 # strcache performance: lookups = 30 / hit rate = 33%
 # hash-table stats:
 # Load=20/8192=0%, Rehash=0, Collisions=1/30=3%
-# Finished Make data base on Fri Jun 17 12:19:50 2022
+# Finished Make data base on Mon Jun 20 11:58:42 2022
 
  
